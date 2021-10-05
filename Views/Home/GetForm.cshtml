@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "GetForm";
+}
+
+<style>
+    .warning {
+        font-weight: bold;
+        color: red;
+    }
+</style>
+
+<h1>GetForm</h1>
+
+<div id="message" class="warning"></div>
+<form id="myform" method="post" action="/home/useform">
+    <label>First Name</label><input type="text" id="nametext" name="nametext" /><br />
+    <label>Last Name</label><input type="text" id="namenew" name="namenew" /><br />
+    <label>Email</label><input type="email" /> <br />
+    <label>Password</label><input type="password" /><br />
+    <label>Confirm Password</label><input type="password" /><br />
+
+</form>
+
+<button id="mybutton">Submit</button>
+
+   function ProcessForm() {
+
+        let n = document.querySelector('#nametext').value;
+        let n = document.querySelector('#namenew').value;
+        let e=document.querySelector('#email').value;
+        let p=document.querySelector('#password').value;
+
+        if (!n || n || !e || !p) {
+            //alert('Please fill in all fields.');
+            document.querySelector('#message').innerText = 'Please fill in all fields.';
+        }
+        else {
+            document.querySelector('#myform').submit();
+        }
+
+    }
+
+
+
+
+
